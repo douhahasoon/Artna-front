@@ -12,19 +12,25 @@ export default function Trending() {
             
 
         
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8  gap-2 pl-16 pr-6  pt-32">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8  gap-2 pl-16 pr-6  pt-14">
             
             
-            <div className="w-full">
+            <div className="w-full relative">
+                <div className="absolute w-full h-full bg-white opacity-20">
+
+                </div>
                 <img className="bg-no-repeat bg-cover" src="./src/Images/Trending/Rect.png"/>
             </div>
-            <div className="w-full"> 
+            <div className="w-full relative"> 
+            <div className="absolute w-full h-full bg-white opacity-20"> </div>
             <img className="bg-no-repeat bg-cover" src="./src/Images/Trending/sec.png"/>
             </div>
-            <div className="w-full">
+            <div className="w-full relative">
+                <div className=" absolute w-full h-full bg-white opacity-20"> </div>
             <img  className="bg-no-repeat bg-cover" src="./src/Images/Trending/Rect.png"/>
             </div>
-            <div className="w-full"> 
+            <div className="w-full relative"> 
+            <div className="absolute w-full h-full bg-white opacity-20"> </div>
             <img className="bg-no-repeat bg-cover" src="./src/Images/Trending/sec.png"/>
             </div>
             

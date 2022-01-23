@@ -8,7 +8,7 @@ export default function Products() {
 
     </div>
       
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8  gap-2 pl-16 pr-6  pt-32"> 
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8  gap-2 pl-16 pr-6  pt-16"> 
     
     <div class="max-w-sm bg-white rounded-lg shadow-md dark:bg-white-800 dark:border-gray-700">
     <a href="#">
