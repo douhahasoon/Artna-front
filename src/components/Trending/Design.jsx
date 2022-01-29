@@ -1,7 +1,17 @@
 import React from 'react'
-
+import { Carousel } from "react-responsive-carousel";
 export default function Design() {
     return (
+        <Carousel
+        autoPlay={true}
+        interval={2000}
+        infiniteLoop={true}
+        showArrows={true}
+        showIndicators={false}
+        showThumbs={false}
+        swipeable={true}
+        showStatus={false}
+      >
         <div> 
 
         
@@ -37,6 +47,7 @@ export default function Design() {
             
         </div>
         </div>
+        </Carousel>
 
     )
 }

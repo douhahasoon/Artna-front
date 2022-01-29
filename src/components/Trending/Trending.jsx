@@ -1,14 +1,15 @@
 import React from 'react'
-
 export default function Trending() {
     return (
+       
         <div>
             <div className="pt-14"> 
             <h1 className="antialiased text-left
              pl-16 font-serif font-semibold
-              text-3xl">Trending</h1>
+             text-3xl">Trending</h1>
 
             </div>
+           
             
 
         
