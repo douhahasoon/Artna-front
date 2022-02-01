@@ -1,8 +1,9 @@
 import React from "react";
 import "./Home.scss";
 import {useEffect, useState} from "react";
+import ScrollAnimation from 'react-animate-on-scroll';
 
-  
+
 
 // Related to the carousel
 
@@ -44,12 +45,17 @@ const Home = () => {
         <div className="e-flex-container">
           <div className="e__home">
             <div className="e__home--left">
-              <h1 className="font-serif font-bold text-gray-100 text-5xl md:text-7xl ">
+              
+               <ScrollAnimation animateIn='bounceInRight'
+             animateOut='bounceOutLeft'>
+              <h1 class=" font-bold text-gray-100 text-5xl md:text-7xl">
               HOUSE OF ART 
               </h1>
+              </ScrollAnimation>
+             
               <h2 className="text-gray-300 font-light text-xl md:text-2xl py-2">
               ART not suppose to be nice ....
-               It suppose to make you feel something !
+              It suppose to make you feel something !
 
               </h2>
                <button class="bg-gray-100 hover:bg-gray-400 text-black font-semi-bold py-2 px-4 rounded-full">

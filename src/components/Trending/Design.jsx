@@ -1,5 +1,8 @@
 import React from 'react'
+import ScrollAnimation from 'react-animate-on-scroll';
 import { Carousel } from "react-responsive-carousel";
+
+
 export default function Design() {
     return (
         <Carousel
@@ -11,14 +14,17 @@ export default function Design() {
         showThumbs={false}
         swipeable={true}
         showStatus={false}
-      >
+>
         <div> 
-
-        
         <div className="pt-14"> 
+        <ScrollAnimation animateIn='flipInY'
+        animateOut='flipOutY'>
         <h1 className="antialiased  text-left pl-16  font-serif font-semibold text-3xl">Designs Picked For you</h1>
+        </ScrollAnimation>
 
         </div>
+        
+        
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8  gap-2 pl-16 pr-6  pt-16">
             
             <div className="w-full relative">

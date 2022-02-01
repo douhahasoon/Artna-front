@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
+
+
 export default function NavBar() {
+  const [hamburgerOpen, setHamburgerOpen ] = useState(false);
+  const toggleHamburger =() =>{
+    setHamburgerOpen(!hamburgerOpen)
+   
+  }
   return (
     <div>
 
@@ -33,7 +40,7 @@ export default function NavBar() {
           </a>
         </div>
         <div class="  navbar-menu hidden lg:order-3 lg:block w-full lg:w-2/5">
-          <a class="block lg:inline-block mt-4 lg:mt-0 mr-10 text-blue-900 hover:text-indigo-600" href="#">
+          <a class="block lg:inline-block mt-4 lg:mt-0 mr-10 text-blue-900 hover:text-indigo-600" href="/AboutUs">
             About us
           </a>
           <Link to="/"> 
@@ -62,7 +69,7 @@ export default function NavBar() {
         <div class="font-sans text-black  bg-white flex items-center justify-center ">
           <div class="border rounded-full overflow-hidden flex">
             <input type="text" class="px-8 py-2" placeholder="Search..." />
-            <button class="flex items-center justify-center px-4 border-l">
+            <button onClick={toggleHamburger} class="flex items-center justify-center px-4 border-l">
              
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />

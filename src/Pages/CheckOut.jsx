@@ -1,11 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import NavBar from "../components/NavBar/NavBar";
+import BreadCrumps from "../components/BreadCrumps/BreadCrumps";
 
 const CheckOut = () => {
     return (
         <>
         <NavBar/>
+        <BreadCrumps />
         <div className="lg:container lg:mx-auto grid grid-cols-9 lg:grid-cols-12">
             <div className="col-span-9 lg:col-span-8 xl:col-span-9 bg-white h-auto lg:h-screen relative lg:px-10 p-6 lg:py-12">
                 <p>
