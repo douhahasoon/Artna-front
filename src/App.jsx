@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import Index from './components/Index';
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
     <Index/>
-   
+
     </div>
   )
 }

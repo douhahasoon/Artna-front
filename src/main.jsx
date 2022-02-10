@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense, lazy } from 'react';
 import ReactDOM from 'react-dom'
 import './index.css'
 import App from './App'
@@ -8,7 +8,9 @@ import CheckOut from './Pages/CheckOut';
 import ProductDetails from './Pages/ProductDetails';
 import Blog from './Pages/Blog';
 import MyModal from './Pages/MyModal'
-import AboutUs from './Pages/AboutUs';
+import Loader from './components/Loader/Loader';
+// import AboutUs from './Pages/AboutUs';
+const LazyAboutUs = lazy(() => import('./Pages/AboutUs'))
 
 ReactDOM.render(
   <React.StrictMode>
@@ -20,7 +22,8 @@ ReactDOM.render(
     <Route path="ProductDetails" element={<ProductDetails/>} />
     <Route path="Blog" element={<Blog/>} />
     <Route path="MyModal" element={<MyModal/>} />
-    <Route path="AboutUs" element={<AboutUs/>} />
+    <Route path="AboutUs" element={<Suspense fallback= {<Loader />} > 
+      <LazyAboutUs/> </Suspense>} />
 
     <Route/>
     </Routes>
