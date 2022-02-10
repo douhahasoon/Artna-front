@@ -1,10 +1,13 @@
 import React from "react";
 import NavBar from "../components/NavBar/NavBar";
+import Map from "../components/BreadCrumps/Map";
 
 const AboutUs = () => {
     return (
         <>
+        
         <NavBar/>
+        
         <div className="2xl:container 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6 py-9 px-4">
             <div className="flex flex-col lg:flex-row justify-between gap-8">
                 <div className="w-full lg:w-5/12 flex flex-col justify-center">
@@ -16,6 +19,7 @@ const AboutUs = () => {
                     <img className="w-[430px] h-full ml-20 pl-20" src="./src/Images/AboutUs/AboutUs.png" alt="A Logo" />
                 </div>
             </div>
+            
 
             <div className="flex lg:flex-row flex-col justify-between gap-8 pt-12">
                 <div className="w-full lg:w-5/12 flex flex-col justify-center">
@@ -43,6 +47,7 @@ const AboutUs = () => {
                     </div>
                 </div>
             </div>
+           <Map/>
         </div>
         </>
     );
