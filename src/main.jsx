@@ -9,7 +9,8 @@ import ProductDetails from './Pages/ProductDetails';
 import Blog from './Pages/Blog';
 import MyModal from './Pages/MyModal'
 import AboutUs from './Pages/AboutUs';
-
+import Signup from './components/signup/Signup'
+import Login from './components/login/Login'
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
@@ -21,7 +22,8 @@ ReactDOM.render(
     <Route path="Blog" element={<Blog/>} />
     <Route path="MyModal" element={<MyModal/>} />
     <Route path="AboutUs" element={<AboutUs/>} />
-
+    <Route path="signup" element={<Signup/>} />
+    <Route path="login" element={<Login/>} />
     <Route/>
     </Routes>
     </BrowserRouter>

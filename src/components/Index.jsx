@@ -15,7 +15,7 @@ export default function Index() {
             <div>
                     <NavBar />
                     <Home />
-                    <Hero/>
+                  
                     <Buttons/>
                     <Trending/>
                     <Design />
