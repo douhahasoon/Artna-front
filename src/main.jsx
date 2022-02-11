@@ -8,10 +8,16 @@ import CheckOut from './Pages/CheckOut';
 import ProductDetails from './Pages/ProductDetails';
 import Blog from './Pages/Blog';
 import MyModal from './Pages/MyModal'
+<<<<<<< HEAD
 import Loader from './components/Loader/Loader';
 // import AboutUs from './Pages/AboutUs';
 const LazyAboutUs = lazy(() => import('./Pages/AboutUs'))
 
+=======
+import AboutUs from './Pages/AboutUs';
+import Signup from './components/signup/Signup'
+import Login from './components/login/Login'
+>>>>>>> 9a919ff013bf3c8c84c1af1c97727670d61a00c1
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
@@ -22,9 +28,15 @@ ReactDOM.render(
     <Route path="ProductDetails" element={<ProductDetails/>} />
     <Route path="Blog" element={<Blog/>} />
     <Route path="MyModal" element={<MyModal/>} />
+<<<<<<< HEAD
     <Route path="AboutUs" element={<Suspense fallback= {<Loader />} > 
       <LazyAboutUs/> </Suspense>} />
 
+=======
+    <Route path="AboutUs" element={<AboutUs/>} />
+    <Route path="signup" element={<Signup/>} />
+    <Route path="login" element={<Login/>} />
+>>>>>>> 9a919ff013bf3c8c84c1af1c97727670d61a00c1
     <Route/>
     </Routes>
     </BrowserRouter>
