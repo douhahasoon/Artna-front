@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import Search from './Search'
-
+import Search from './search/Search'
+import data  from './search/MOCK_DATA.json'
 
 export default function NavBar() {
   
@@ -9,12 +9,12 @@ export default function NavBar() {
     <div>
 
       <nav class="relative flex bg-white flex-wrap  
-      items-center justify-center  p-4">
+      items-center justify-center xs:justify-between p-4 z-3">
         <div class="lg:order-2 w-auto lg:w-1/5 lg:text-center">
 
         </div>
-        <div class="block lg:hidden">
-          <button class="navbar-burger flex items-center py-2 px-3 text-indigo-500 rounded border border-indigo-500">
+        <div class="block lg:hidden  ">
+          <button class="navbar-burger flex order-last py-2 px-3 text-indigo-500 rounded border border-indigo-500">
             <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
               <title>
                 Menu
@@ -66,7 +66,7 @@ export default function NavBar() {
           </a>
           </li>
         </ul>
-        <Search  />
+        <Search placeholder="Enter the Prodect name ... " data={data}/>
       </nav>
       
 
