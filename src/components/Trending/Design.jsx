@@ -1,6 +1,8 @@
 import React from 'react'
 
 import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+
 import { Link } from 'react-router-dom';
 
 
@@ -15,6 +17,7 @@ export default function Design() {
         showThumbs={false}
         swipeable={true}
         showStatus={false}
+        autoFocus={true}
 >
         <div> 
         <div className="pt-14"> 

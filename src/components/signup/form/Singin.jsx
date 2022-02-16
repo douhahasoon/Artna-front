@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 
 export default function Singin() {
     return (
-        <div class="grid flex-grow h-1024  ">
+        <div class="grid flex-grow  mt-9  ">
             
             <Link to='/login'>
                 <button class="btn btn-square btn-ghost w-40 ml-5 ">
@@ -23,48 +23,40 @@ export default function Singin() {
             <div class="form-control place-self-center ">
                 <label class="label">
                     <span class="label-text mx-8 text-gray-400">
-                        Username
+                       First Name
                     </span>
                 </label>
                 <input
                     type="text"
-                    placeholder="username"
-                    class="input input-bordered h-48.55 mx-8 w-80 place-self-center" />
+                    placeholder="First Name"
+                    class="input input-bordered h-48.55 mx-8 w-80 place-self-center"
+                    name="first-name" />
 
             </div>
 
             <div class="form-control place-self-center">
                 <label class="label">
                     <span class="label-text mx-8 text-gray-400">
-                        Email Address
+                        Last Name
                     </span>
                 </label>
                 <input
                     type="text"
-                    placeholder="Email Address"
-                    class="input  input-bordered mx-8 w-80 place-self-center" />
+                    placeholder="Last Name"
+                    class="input  input-bordered mx-8 w-80 place-self-center"
+                    name="last-name" />
             </div>
             <div class="form-control place-self-center">
                 <label class="label">
                     <span class="label-text mx-8 text-gray-400">
-                        Phone
+                        Email
                     </span>
                 </label>
                 <input
-                    type="text"
-                    placeholder="Phone"
-                    class="input  input-bordered mx-8 w-80 place-self-center" />
-            </div>
-            <div class="form-control place-self-center">
-                <label class="label">
-                    <span class="label-text mx-8 text-gray-400">
-                        City
-                    </span>
-                </label>
-                <input
-                    type="text"
-                    placeholder="City"
-                    class="input input-bordered mx-8 w-80 place-self-center" />
+                    type="email"
+                    placeholder="Email"
+                    class="input  input-bordered mx-8 w-80 place-self-center" 
+                    name="email"/>
             </div>
             <div class="form-control place-self-center">
                 <label class="label">
@@ -73,12 +65,25 @@ export default function Singin() {
                     </span>
                 </label>
                 <input
-                    type="password"
+                    type="number"
                     placeholder="Password"
-                    class="input input-bordered mx-8 w-80 place-self-center" />
+                    class="input input-bordered mx-8 w-80 place-self-center"
+                    name="password1" />
+            </div>
+            <div class="form-control place-self-center">
+                <label class="label">
+                    <span class="label-text mx-8 text-gray-400">
+                    Password2
+                    </span>
+                </label>
+                <input
+                    type="password"
+                    placeholder="Verified Password"
+                    class="input input-bordered mx-8 w-80 place-self-center"
+                    name="password1" />
             </div>
             <button class="btn btn-wide mx-8 w-426 w-80 mt-8 place-self-center">
-                SignUp
+            Verified Password
             </button>
 
         </div>

@@ -1,10 +1,7 @@
 import React, {useState} from 'react';
 import Index from './components/Index';
-<<<<<<< HEAD
 // import { Link } from "react-router-dom";
-=======
 import { Link } from "react-router-dom";
->>>>>>> 9a919ff013bf3c8c84c1af1c97727670d61a00c1
 
 
 function App() {
@@ -16,11 +13,8 @@ function App() {
   return (
     <div className="App">
     <Index/>
-<<<<<<< HEAD
 
-=======
    
->>>>>>> 9a919ff013bf3c8c84c1af1c97727670d61a00c1
     </div>
   )
 }

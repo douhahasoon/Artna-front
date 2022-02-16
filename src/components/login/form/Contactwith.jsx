@@ -2,6 +2,7 @@ import React from 'react'
 import Frame14 from '../image/Frame14.jpg'
 import Frame15 from '../image/Frame15.jpg'
 import Frame16 from '../image/Frame16.jpg'
+import { FacebookLoginButton } from "react-social-login-buttons";
 
 export default function Contactwith() {
     return (
@@ -13,6 +14,7 @@ export default function Contactwith() {
 
             <div class=" mx-8 flex">
                 <div class=" flex-auto ml-20">
+                    
                     <a href='#'><img src={Frame14} alt="Google" /> </a>
                 </div>
                 <div class=" flex-auto ">

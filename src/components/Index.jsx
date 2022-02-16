@@ -7,6 +7,7 @@ import Buttons from './Buttons/Buttons'
 import Trending from './Trending/Trending'
 import Design from './Trending/Design'
 import Products from './Products/Products'
+import WahtsUp from './Trending/WhatsUp'
 
 export default function Index() {
     return (
@@ -18,6 +19,7 @@ export default function Index() {
                   
                     <Buttons/>
                     <Trending/>
+                    <WahtsUp />
                     <Design />
                     <Products />
                     <Footer/>

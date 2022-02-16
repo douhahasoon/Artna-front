@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import WahtsUp from './WhatsUp'
 export default function Trending() {
     return (
        
@@ -40,6 +41,7 @@ export default function Trending() {
             <div className="absolute w-full h-full bg-white opacity-20"> </div>
             <img className="bg-no-repeat bg-cover" src="./src/Images/Trending/sec.png"/>
             </div>
+           
             
         </div>
         </div>
