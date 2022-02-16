@@ -65,8 +65,8 @@ export default function Singin() {
                     </span>
                 </label>
                 <input
-                    type="number"
-                    placeholder="Password"
+                    type="password"
+                    placeholder="password"
                     class="input input-bordered mx-8 w-80 place-self-center"
                     name="password1" />
             </div>
