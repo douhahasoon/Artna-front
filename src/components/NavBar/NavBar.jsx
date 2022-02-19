@@ -37,7 +37,7 @@ export default function NavBar() {
                     dark:text-gray-500 
                     dark:hover:text-black md:mx-4 md:my-0" href="/">Home</a>
                     <a class="my-1 text-lg  font-sans font-medium text-gray-400 transition-colors duration-200 transform
-                    dark:text-gray-400  dark:hover:text-black  md:mx-4 md:my-0" href="/SignUp">Signup</a>
+                    dark:text-gray-400  dark:hover:text-black  md:mx-4 md:my-0" href="/SignUp">Login</a>
                     <a class="my-1 text-lg   font-sans font-medium text-gray-400 transition-colors duration-200 transform 
                     dark:text-gray-400  dark:hover:text-black md:mx-4 md:my-0" href="/gallery">Gallery</a>
                     <a class="my-1 text-lg  font-sans font-medium text-gray-400 transition-colors duration-200 transform 

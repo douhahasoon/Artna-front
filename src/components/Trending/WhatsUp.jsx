@@ -6,6 +6,7 @@ import 'react-whatsapp-widget/dist/index.css'
 const WahtsUp = () => {
   return (
       
+      
   <WhatsAppWidget
   textReplyTime='Typically replies within a day'
   message='Hello! 👋🏼 \n\nWhat can we do for you?'
