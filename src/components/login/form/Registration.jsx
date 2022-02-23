@@ -16,18 +16,20 @@ export default function Registration() {
     const navigate = useNavigate()
     const [email, setEmail] = React.useState('')
     const [password, setPassword] = React.useState('')
-   const login = (e)=>{
+    const login = (e)=>{
     
-      axios.post(' /api/academy/auth/login',
-    {
+        axios({
+            method: "post",
+            url: 'http://127.0.0.1:8000/api/auth/signin',
+            data:   {
+                
         email:email,
         password:password,
-        
-        }
-        )
+    
+ },
+        })
        .then((response)=>{
             console.log(response)
-           let token = response.data.token.access_token;
             let data = response.data;
            localStorage.setItem(TOKEN_KEY, JSON.stringify(data))
            navigate('/')

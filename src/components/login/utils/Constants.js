@@ -1,2 +1,2 @@
 export const TOKEN_KEY = 'token'
-export const BASE_URL = 'https://website-backend.computiq.tech'
+export const BASE_URL = 'http://127.0.0.1:80009/'
