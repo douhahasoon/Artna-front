@@ -2,7 +2,24 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 export default function Products() {
+//  const [products, setProducts] = useState([])
+ 
+//     function addToCart() {
+
+
+
+//     axios.get('https://fakestoreapi.com/products')
+//         .then(response => response.data)
+//         .then((data) => {
+//             setProducts(data)
+//     })
+
+//     }
+//     useEffect(()=>{
+//         addToCart();
+//     },[])
   return (
+      
 
     <div>
     <div className="pt-14"> 
