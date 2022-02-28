@@ -13,6 +13,8 @@ const LazyAboutUs = lazy(() => import('./Pages/AboutUs'))
 import Signup from './components/signup/Signup'
 import Login from './components/login/Login'
 import LogInPage from './Pages/LogInPage'
+// import ShoppingCart from './Pages/ShoppingCart'
+
 
 
 ReactDOM.render(
@@ -30,6 +32,7 @@ ReactDOM.render(
     <Route path="signup" element={<Signup/>} />
     <Route path="login" element={<Login/>} />
     <Route path="LogInPage" element={<LogInPage/>} />
+    {/* <Route path="ShoppingCart" element={<ShoppingCart/>} /> */}
 
     <Route/>
     </Routes>
@@ -38,5 +41,6 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 )
+
 
 

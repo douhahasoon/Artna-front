@@ -10,6 +10,7 @@ import ScrollAnimation from 'react-animate-on-scroll';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Loader from "../Loader/Loader";
 import Gallery from "../../Pages/Gallery";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
@@ -58,9 +59,12 @@ const Home = () => {
               It suppose to make you feel something !
 
               </h2>
-               <button class="bg-gray-100 hover:bg-gray-400 text-black font-semi-bold py-2 px-4 rounded-full">
+              <Link to='/gallery'> 
+               <button className="bg-gray-100 hover:bg-gray-400 text-black font-semi-bold py-2 px-4 rounded">
                 Buy Now
+                
                 </button>
+                </Link>
             </div>
             <div className="e__home--right">
               {/* <Carousel /> */}

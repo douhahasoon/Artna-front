@@ -19,6 +19,7 @@ export default function Registration() {
     const [email, setEmail] = React.useState('')
     const [password, setPassword] = React.useState('')
     const login = (e)=>{
+        e.preventDefault()
     
         axios({
             method: "post",
@@ -32,6 +33,7 @@ export default function Registration() {
         })
         .then((response)=>{
             console.log(response)
+            let token = response.data.token.access_token;
             let data = response.data;
             localStorage.setItem(TOKEN_KEY, JSON.stringify(data))
             navigate('/')
@@ -41,15 +43,14 @@ export default function Registration() {
         })
     }
     
-    // const {register, handleSubmit, formState: {errors},reset} = useForm()
 
-    // const onSubmit = (data) =>{
-    //     console.log(data);
-    //     reset()
-    // }
+    const onSubmit = (data) =>{
+        console.log(data);
+        reset()
+    }
     return (
         
-        
+        <form onSubmit={handleSubmit(onSubmit)}> 
         <div class="grid flex-grow h-full  ">
             
             <Link to='/'>
@@ -108,11 +109,13 @@ export default function Registration() {
             </div>
 
             <Remeberme />
-            <button  type="submit" onClick={login} class="btn btn-wide  mx-8 place-self-center  ">
+            <button  type="submit"  onClick={login} class="btn btn-wide  mx-8 place-self-center  ">
                 Login
             </button>
 
         </div>
+        </form>
+
 
 
     )
