@@ -16,12 +16,15 @@ export default function Index() {
       <NavBar />
       <Home />
       <Buttons />
+      <Sticky enabled={true} top={5} bottomBoundary={120}>
+
+<WahtsUp />
+</Sticky>
       <Trending />
       <Design />
       <Products />
       <Footer />
-
-      <WahtsUp />
+    
     </div>
   );
 }

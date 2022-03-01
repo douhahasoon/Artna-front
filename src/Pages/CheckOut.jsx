@@ -2,8 +2,55 @@ import React from "react";
 import { Link } from "react-router-dom";
 import NavBar from "../components/NavBar/NavBar";
 import BreadCrumps from "../components/BreadCrumps/BreadCrumps";
+import { useState } from "react";
+import aaa from '../Images/Products/aaa.png'
+import { useEffect } from "react";
+import axios from "axios";
+import APIJS from "../API.JS";
 
 const CheckOut = () => {
+    const [item,setItem]= useState([
+        {
+            id:'1',
+            name: 'djslkad',
+            price: '20$',
+            description: 'jkdad',
+            image: aaa
+
+        },
+        {
+            id:'1',
+            name: 'djslkad',
+            price: '20$',
+            description: 'jkdad',
+            image: "./src/Images/SignUp/draw2.png"
+
+        },
+        {
+            id:'1',
+            name: 'djslkad',
+            price: '20$',
+            description: 'jkdad',
+            image: "./src/Images/SignUp/draw3.png"
+
+        },
+
+    ])
+
+    // useEffect(
+ 
+    //     
+    
+    // APIJS.get('api/order/cart')
+    //     .then((response)=>{
+    //     const temp = response.data;
+        
+        // setItem(temp)
+    //     })
+    //     .catch((err)=>{
+    //         console.log(err)
+    //     })
+    // ,[])
     return (
         <>
         <NavBar/>
@@ -52,34 +99,30 @@ const CheckOut = () => {
                     <h5 className="text-gray-600 hover:text-gray-800 cursor-pointer text-base font-normal underline">Edit Cart</h5>
                     </Link>
                      </div>
-
-                <div className="mt-7 flex flex-1 text-gray-800 text-lg font-normal">
-                <img src="./src/Images/SignUp/draw.png" />
-                    <h3 className="pl-4 pt-11">Painting</h3>
+                     {
+                    item.map(index => {
+                       
+                        return <div className="mt-7 flex flex-1 text-gray-800 text-lg font-normal">
+                        <img width={120} src={index.image} />
+                        <h3 className="pl-4 pt-11">{index.name}</h3>
                     <h3 className="flex-auto text-right pr-4 md:pr-5 lg:pr-4"></h3>
-                    <h3 className="pt-11">$100</h3>
+                    <h3 className="pt-11">${index.price}</h3>
                 </div>
 
-                <div className="mt-5 flex flex-1 text-gray-800 text-lg font-normal">
-                <img src="./src/Images/SignUp/draw2.png" />
-                    <h3 className="pl-4 pt-11">Homemade</h3>
-                    <h3 className="flex-auto text-right pr-4 md:pr-5 lg:pr-4"></h3>
-                    <h3 className="pt-11">$100</h3>
-                </div>
+                    }) 
+                     }
 
-                <div className="mt-5 flex flex-1 text-gray-800 text-lg font-normal">
-                <img src="./src/Images/SignUp/draw3.png" />
-                    <h3 className="pl-4 pt-11">Homemade</h3>
-                    <h3 className="flex-auto text-right pr-4 md:pr-5 lg:pr-4"></h3>
-                    <h3 className="pt-11">$100</h3>
-                </div>
+                
+
+                
+
                 <div className="-bottom-7 px-8 xl:px-12 pb-5 md:-bottom-96 bg-gray-100 md:pt-80 md:pb-10
                  lg:pb-10 lg:pt-0 lg:mt-0 lg:bottom-20 absolute left-0 w-full text-lg font-medium text-gray-800">
                     <span aria-label="Total" className="float-left text-2xl text-gray-800 font-normal">
                         Total
                     </span>
                     <span aria-label="Total Price" className="float-right font-semibold text-gray-800 text-2xl">
-                        $100
+                        $300
                     </span>
                     <div className="clear-both"></div>
                 </div>

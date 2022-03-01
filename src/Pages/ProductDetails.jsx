@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import NavBar from "../components/NavBar/NavBar";
 import { Link } from "react-router-dom";
+import APIJS from "../API.JS";
 
 const ProductDetails = () => {
     const [rotate, setRotate] = useState(false);
@@ -15,6 +16,45 @@ const ProductDetails = () => {
             setCount((prev) => prev - 1);
         }
     };
+
+    const [item,setitem] = useState({
+        id:'1',
+        name:'Oil Painting',
+        description:"Lorem Ipsum is that it",
+        price:'790.89',
+
+    });
+
+
+    // useEffect(()=>{
+
+    //     APIJS.get(`/api/products/${id}`)
+    //     .then(res=>{
+    //         const temp = res.data;
+    //         setitem(temp);
+    //     })
+    //     .catch(err=>{
+    //         console.log(err);
+    //     })
+
+
+    // },[])
+
+
+
+
+
+    // const addToCart= (id, count)=> {
+    // APIJS.Post(`/api/products/${id}`)
+    // .then(
+    //     res=>{ 
+    //         alert('add to cart successfully')
+    //     }
+    // )
+    // .catch((err)=>{
+    //     console.log(err)
+    //         })
+    // }
 
     return (
         <>
@@ -36,7 +76,7 @@ const ProductDetails = () => {
 
                 <div className="  w-full sm:w-96 md:w-8/12 lg:w-6/12 items-center">
                     <p className=" focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 font-normal text-base leading-4 text-gray-600">Home / Painting /Oil Painting</p>
-                    <h2 className="font-semibold lg:text-4xl text-3xl lg:leading-9 leading-7 text-gray-800 mt-4">Oil Painting</h2>
+                    <h2 className="font-semibold lg:text-4xl text-3xl lg:leading-9 leading-7 text-gray-800 mt-4">{item.name}</h2>
 
                     <div className=" flex flex-row justify-between  mt-5">
                         <div className=" flex flex-row space-x-3">
@@ -74,9 +114,8 @@ const ProductDetails = () => {
                         <p className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 font-normal text-base leading-4 text-gray-700 hover:underline hover:text-gray-800 duration-100 cursor-pointer">22 reviews</p>
                     </div>
 
-                    <p className=" font-normal text-base leading-6 text-gray-600 mt-7">Lorem Ipsum is that it has a more-or-less normal distribution of letters
-                     Lorem Ipsum is that it has a more-or-less normal distribution of letters.</p>
-                    <p className=" font-semibold lg:text-2xl text-xl lg:leading-6 leading-5 mt-6 ">$ 790.89</p>
+                    <p className=" font-normal text-base leading-6 text-gray-600 mt-7">{item.description}</p>
+                    <p className=" font-semibold lg:text-2xl text-xl lg:leading-6 leading-5 mt-6 ">$ {item.price}</p>
 
                     <div className="lg:mt-11 mt-10">
                         <div className="flex flex-row justify-between">
@@ -101,7 +140,10 @@ const ProductDetails = () => {
                         <hr className=" bg-gray-200 w-full mt-4" />
                     </div>
 
-                    <button className="focus:outline-none focus:ring-2 hover:bg-black focus:ring-offset-2 focus:ring-gray-800 font-medium text-base leading-4 text-white bg-gray-800 w-full py-5 lg:mt-12 mt-6">Add to shopping bag</button>
+                    <button onClick={addToCart(item.id)} className="focus:outline-none 
+                    focus:ring-2 hover:bg-black focus:ring-offset-2 focus:ring-gray-800 
+                    font-medium text-base leading-4 text-white bg-gray-800 w-full 
+                    py-5 lg:mt-12 mt-6">Add to shopping bag</button>
                 </div>
 
                 {/* <!-- Preview Images Div For larger Screen--> */}
