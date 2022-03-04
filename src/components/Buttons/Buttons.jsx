@@ -23,7 +23,7 @@ export default function Buttons() {
          font-medium rounded-lg text-base px-5 py-2.5 text-center mr-2
           mb-2 dark:bg-gray-600 dark:text-white 
           dark:borderay-600-gr
-           dark:hover:bg-gray-700 
+           dark:hover:bg-gray-700
            dark:hover:border-blue-700
             dark:focus:ring-gray-800 col-span-12 sm:col-span-6 md:col-span-3">Hand Made</button>
             <button type="button" 

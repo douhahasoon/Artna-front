@@ -19,7 +19,8 @@ export default function Singin() {
     const [password1, setPassword1] = React.useState('')
     const [password2, setPassword2] = React.useState('')
     const singup = (e)=>{
-    
+        e.preventDefault()
+
         axios({
             method: "post",
             url: 'https://douha.pythonanywhere.com/api/auth/signup',
@@ -36,8 +37,8 @@ export default function Singin() {
        .then((response)=>{
             console.log(response)
             let data = response.data;
-        //   localStorage.setItem(TOKEN_KEY, JSON.stringify(data))
-        //    navigate('/login')
+          localStorage.setItem(TOKEN_KEY, JSON.stringify(data))
+           navigate('/login')
        })
       .catch((err)=>{
            console.log(err)
@@ -49,6 +50,7 @@ export default function Singin() {
    
     return (
         <div class="flex flex-col  items-center    mt-9  ">
+        <form onSubmit={singup}> 
             
             {/* <Link to='/login'>
                 <button class="btn btn-square btn-ghost w-40 ml-5 ">
@@ -73,7 +75,8 @@ export default function Singin() {
                     type="text"
                     placeholder="First Name"
                     class="input input-bordered h-48.55 mx-8 w-80 place-self-center"
-                    name="first-name" />
+                    name="first-name"
+                    required />
 
             </div>
 
@@ -88,7 +91,8 @@ export default function Singin() {
                     type="text"
                     placeholder="Last Name"
                     class="input  input-bordered mx-8 w-80 place-self-center"
-                    name="last-name" />
+                    name="last-name" 
+                    required/>
             </div>
             <div class="form-control place-self-center">
                 <label class="label">
@@ -101,7 +105,8 @@ export default function Singin() {
                     type="email"
                     placeholder="Email"
                     class="input  input-bordered mx-8 w-80 place-self-center" 
-                    name="email"/>
+                    name="email"
+                    required />
             </div>
             <div class="form-control place-self-center">
                 <label class="label">
@@ -114,12 +119,13 @@ export default function Singin() {
                     type="password"
                     placeholder="password"
                     class="input input-bordered mx-8 w-80 place-self-center"
-                    name="password1" />
+                    name="password"
+                    required />
             </div>
             <div class="form-control place-self-center">
                 <label class="label">
                     <span class="label-text mx-8 text-gray-400">
-                    Password2
+                    Password
                     </span>
                 </label>
                 <input
@@ -127,16 +133,16 @@ export default function Singin() {
                     type="password"
                     placeholder="Verified Password"
                     class="input input-bordered mx-8 w-80 place-self-center"
-                    name="password1" />
+                    name="password" 
+                    required />
             </div>
            
-            <Link to={'/'}>
-            <button onClick={singup} class="btn btn-wide mx-8 w-426 w-80 mt-8 place-self-center">
-            Verified Password 
+            <button    type='Sbmit' class="btn btn-wide mx-8 w-426 w-80 mt-8 place-self-center">
+            Signup
             </button>
-            </Link>
-            
+           
 
+        </form>
         </div>
       
 

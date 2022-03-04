@@ -1,4 +1,4 @@
-import React,{ useState }  from "react";
+import React,{ useState  }  from "react";
 // import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom'
 import arrow from '../image/arrow.png'
@@ -16,18 +16,18 @@ import LoginAlerts from '../../LoginAlerts/LoginAlerts';
 
 export default function Registration(props) {
      const {register, handleSubmit, formState: {errors},reset} = useForm()
-
     const navigate = useNavigate()
     const [email, setEmail] = React.useState('')
     const [password, setPassword] = React.useState('')
     const [alert, setalert] = useState(null);
+    
 
     const login = (e)=>{
-        e.prev
+        e.preventDefault()
     
         axios({
             method: "post",
-            url: 'http://127.0.0.1:8000/api/auth/signin',
+            url: 'https://douha.pythonanywhere.com/api/auth/signin',
             data:   {
                 
         email:email,
@@ -61,24 +61,27 @@ export default function Registration(props) {
     //     reset()
     // }
     
-    const handleAdd = (e) => {
-        e.preventDefault()
-        alert('You have submitted')
+    // const handleAdd = (e) => {
+    //     e.preventDefault()
+    //     alert('You have submitted')
+    // }
+    const backButton = () =>{
+        navigate('/signup')
     }
     return (
 
         
         
         <div class="grid flex-grow h-full  ">
-         <form className='form' onSubmit={handleAdd}>
-         <div className='form-control'>
-            
-            <Link to='/'>
-                <button class="btn btn-square btn-ghost w-40 ml-5 ">
+          
+                <button onClick={backButton} class="btn btn-square btn-ghost w-40 ml-5 ">
                     <img src={arrow} alt="arrow" height={30} width={30} />
                     <p class="text-gray-400 ml-2">Back</p>
                 </button>
-            </Link>
+         <form className='form' onSubmit={login}>
+         <div className='form-control'>
+            
+            
             <div class="place-self-center mb-10">
                 <p class="text-3xl font-sans">
                     <b>Account Login</b>
@@ -106,7 +109,7 @@ export default function Registration(props) {
                         {...register("email", {
                         onChange: (e) => setEmail(e.target.value),
                         required: "email is required",
-                })} />
+                })} required />
                 {/* {errors.email && (<small className="text-red-400 ml-9"> {errors.email.message} </small>)} */}
 
             </div>
@@ -124,7 +127,8 @@ export default function Registration(props) {
                 {...register("password", {
         onChange: (e) => setPassword(e.target.value),
         required: "Password is required",
-            })} />
+            })} 
+            required />
             {password.email && (<small className="text-red-400 ml-9"> {errors.password.message} </small>)}
 
             
@@ -132,7 +136,7 @@ export default function Registration(props) {
             </div>
 
             <Remeberme />
-            <button  type="submit" onClick={login} class="btn btn-wide  mx-8 place-self-center  ">
+            <button  type="submit"  class="btn btn-wide  mx-8 place-self-center  ">
                 Login
             </button>
            
