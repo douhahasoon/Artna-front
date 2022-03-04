@@ -16,7 +16,7 @@ export default function Loader(props) {
           <div></div>
           <div></div>
           </div>
-          <div>Loading</div>
+          <div className="pt-30">Loading</div>
   </div>
   </div>
   );

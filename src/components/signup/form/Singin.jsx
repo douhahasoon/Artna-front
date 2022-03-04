@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 import axios from '../utils/axios'
 import {TOKEN_KEY} from '../utils/Constants'
+// import { useNavigate } from 'react-router';
+
 
 
 
@@ -20,11 +22,11 @@ export default function Singin() {
     
         axios({
             method: "post",
-            url: 'http://127.0.0.1:8000/api/auth/signup',
+            url: 'https://douha.pythonanywhere.com/api/auth/signup',
             headers: { "Content-type": "application/json" },
             data:   {
-            firstname:firstname,
-            lastname:lastname,
+            first_name:firstname,
+            last_name:lastname,
             email:email,
             password1:password1,
             password2:password2,
@@ -41,20 +43,24 @@ export default function Singin() {
            console.log(err)
         })
    }
+//    const HandleSubmit  = (e)=>{
+//        e.preventDefault()
+//    }
    
     return (
-        <div class="grid flex-grow  mt-9  ">
+        <div class="flex flex-col  items-center    mt-9  ">
             
-            <Link to='/login'>
+            {/* <Link to='/login'>
                 <button class="btn btn-square btn-ghost w-40 ml-5 ">
                     <img src={arrow} alt="Iphone13" height={30} width={30} />
                     <p class="text-gray-400 ml-2">
                         Back</p>
                 </button>
-            </Link>
+            </Link> */}
             <h1 class="place-self-center text-3xl font-sans mb-10">
                 <b>Account SignUp</b>
             </h1>
+            {/* <form onSubmit={HandleSubmit}> */}
 
             <div class="form-control place-self-center ">
                 <label class="label">
@@ -123,12 +129,16 @@ export default function Singin() {
                     class="input input-bordered mx-8 w-80 place-self-center"
                     name="password1" />
             </div>
-
+           
+            <Link to={'/'}>
             <button onClick={singup} class="btn btn-wide mx-8 w-426 w-80 mt-8 place-self-center">
-            Verified Password
+            Verified Password 
             </button>
+            </Link>
+            
 
         </div>
+      
 
 
 

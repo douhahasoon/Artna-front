@@ -29,4 +29,10 @@
     height: 100%;
     object-fit: cover;
   }
+  .sticky-outer-wrapper{
+    position: fixed !important;
+    bottom: 10px !important;
+    right: 10px !important;
+    z-index: 999999 !important;
+  }
   

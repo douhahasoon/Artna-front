@@ -16,7 +16,7 @@ export default function Buttons() {
            dark:bg-gray-800 dark:hover:bg-gray-700 
            dark:focus:ring-gray-800 
            dark:border-blue-700 
-            col-span-12 sm:col-span-6 md:col-span-3">Posts</button>
+            col-span-12 sm:col-span-6 md:col-span-3">NFT Posts</button>
         <button type="button" 
         class="text-gray-900 bg-white border border-gray-300
          hover:bg-gray-100 focus:ring-4 focus:ring-blue-300 

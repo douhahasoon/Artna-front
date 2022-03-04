@@ -1,4 +1,4 @@
-import React from "react";
+import React,{ useState }  from "react";
 // import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom'
 import arrow from '../image/arrow.png'
@@ -8,16 +8,20 @@ import { useNavigate } from 'react-router-dom';
 import axios from '../utils/axios'
 import {TOKEN_KEY} from '../utils/Constants'
 import { useForm } from "react-hook-form";
+import LoginAlerts from '../../LoginAlerts/LoginAlerts';
 
 
 
 
-export default function Registration() {
-    const {register, handleSubmit, formState: {errors},reset} = useForm()
+
+export default function Registration(props) {
+     const {register, handleSubmit, formState: {errors},reset} = useForm()
 
     const navigate = useNavigate()
     const [email, setEmail] = React.useState('')
     const [password, setPassword] = React.useState('')
+    const [alert, setalert] = useState(null);
+
     const login = (e)=>{
         e.prev
     
@@ -36,9 +40,17 @@ export default function Registration() {
             let data = response.data;
             localStorage.setItem(TOKEN_KEY, JSON.stringify(data))
             navigate('/')
+            setalert(1);
+            setTimeout(() => {
+                setalert(null)
+            }, 2000);
         })
         .catch((err)=>{
             console.log(err)
+            setalert(0);
+            setTimeout(() => {
+            setalert(null)
+            }, 2000);
         })
     }
     
@@ -48,11 +60,18 @@ export default function Registration() {
     //     console.log(data);
     //     reset()
     // }
+    
+    const handleAdd = (e) => {
+        e.preventDefault()
+        alert('You have submitted')
+    }
     return (
 
         
         
         <div class="grid flex-grow h-full  ">
+         <form className='form' onSubmit={handleAdd}>
+         <div className='form-control'>
             
             <Link to='/'>
                 <button class="btn btn-square btn-ghost w-40 ml-5 ">
@@ -71,6 +90,7 @@ export default function Registration() {
                     </Link>
                 </p>
             </div>
+           
             
             <div class="form-control  place-self-center">
                 <label class="label">
@@ -87,7 +107,7 @@ export default function Registration() {
                         onChange: (e) => setEmail(e.target.value),
                         required: "email is required",
                 })} />
-                {errors.email && (<small className="text-red-400 ml-9"> {errors.email.message} </small>)}
+                {/* {errors.email && (<small className="text-red-400 ml-9"> {errors.email.message} </small>)} */}
 
             </div>
             <div class="form-control place-self-center">
@@ -107,7 +127,7 @@ export default function Registration() {
             })} />
             {password.email && (<small className="text-red-400 ml-9"> {errors.password.message} </small>)}
 
-
+            
 
             </div>
 
@@ -115,7 +135,10 @@ export default function Registration() {
             <button  type="submit" onClick={login} class="btn btn-wide  mx-8 place-self-center  ">
                 Login
             </button>
+           
 
+        </div>
+         </form>
         </div>
         
 
