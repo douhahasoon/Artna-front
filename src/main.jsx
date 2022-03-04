@@ -13,8 +13,8 @@ const LazyAboutUs = lazy(() => import('./Pages/AboutUs'))
 import Signup from './components/signup/Signup'
 import Login from './components/login/Login'
 import LogInPage from './Pages/LogInPage'
- import ShoppingCart from './Pages/ShoppingCart'
- 
+import ShoppingCart from './Pages/ShoppingCart'
+
 
 
 
