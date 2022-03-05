@@ -6,18 +6,26 @@ import { useState } from "react";
 import aaa from '../Images/Products/aaa.png'
 import { useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 import APIJS from "../API.JS";
 import { baseURL } from "../baseurl";
 import { useForm } from "react-hook-form";
 
-const CheckOut = () => {
+
+const CheckOut = (e) => {
     const [total,settotal]= useState(0)
+    const navigate = useNavigate()
     const [item,setItem]= useState([])
     const [product,setProduct] = useState([])
-     const { register, formState: { errors }, handleSubmit } = useForm();
-     const onSubmit = data => console.log(data);
-
-
+    // const { register, formState: { errors }, handleSubmit } = useForm();
+    const onSubmit = data => console.log(data);
+    
+    
+    const handleSubmitt= (e) => {
+        e.preventDefault()
+      
+        navigate('/MyModal')
+    }
 
 
 
@@ -84,25 +92,29 @@ const CheckOut = () => {
                     <p className="font-normal text-sm text-gray-600 mb-3">Your details</p>
                     <h3 className="text-2xl text-gray-800 font-medium">Enter your details</h3>
 
-                    <form onSubmit={handleSubmit(onSubmit)} className="mt-8" autoComplete="off">
+                    <form onSubmit={handleSubmitt} className="mt-8" autoComplete="off">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
-                            <input {...register("emailAddress", { required: true })}  aria-label="emailAddress" className="border-b-2 border-gray-300 pb-3 text-base text-gray-600 font-normal placeholder-gray-600 focus:outline-none" type="email" name="email" id="email" placeholder="First Name" />
-                            {errors.emailAddress?.type === 'required' && "email address is required"}
-                            <input  {...register("yourName", { required: true })}
+                            <input
+                            //  {...register("emailAddress", { required: true })}
+                               aria-label="name" className="border-b-2 border-gray-300 pb-3 text-base text-gray-600 font-normal placeholder-gray-600 focus:outline-none" type="name" name="name" id="name" placeholder="First Name" required/>
+                            {/* {errors.emailAddress?.type === 'required' && "email address is required"} */}
+                            <input  
+                            // {...register("yourName", { required: true })}
                               aria-label="yourName" className="border-b-2 border-gray-300 pb-3 text-base text-gray-600 font-normal placeholder-gray-600 
-                              focus:outline-none" type="text" name="yourName" id="YourName" placeholder="Last Name" />
-                                {errors.yourName?.type === 'required' && "your Name is required"}
-                            <input  aria-label="phoneNumber" className="border-b-2 border-gray-300 pb-3 text-base text-gray-600 font-normal placeholder-gray-600 focus:outline-none" type="number" name="phoneNumber" id="phoneNumber" placeholder="Phone Number" />
-                            <input  aria-label="Location" className="border-b-2 border-gray-300 pb-3 text-base text-gray-600 font-normal placeholder-gray-600 focus:outline-none" type="text" name="Location" id="YourName" placeholder="Province" />
-                            <input  aria-label="Locatio" className="border-b-2 border-gray-300 pb-3 text-base text-gray-600 font-normal placeholder-gray-600 focus:outline-none" type="text" name="Location" id="YourName" placeholder="City" />
+                              focus:outline-none" type="text" name="yourName" id="YourName" placeholder="Last Name"
+                              required />
+                                {/* {errors.yourName?.type === 'required' && "your Name is required"} */}
+                            <input  aria-label="phoneNumber" className="border-b-2 border-gray-300 pb-3 text-base text-gray-600 font-normal placeholder-gray-600 focus:outline-none" type="number" name="phoneNumber" id="phoneNumber" placeholder="Phone Number" required />
+                            <input  aria-label="Location" className="border-b-2 border-gray-300 pb-3 text-base text-gray-600 font-normal placeholder-gray-600 focus:outline-none" type="text" name="Location" id="YourName" placeholder="Province" required />
+                            <input  aria-label="Locatio" className="border-b-2 border-gray-300 pb-3 text-base text-gray-600 font-normal placeholder-gray-600 focus:outline-none" type="text" name="Location" id="YourName" placeholder="City"  required/>
  
                         </div>
+                      
+                <button  className="bg-gray-800 hover:bg-gray-900 rounded text-white p-4 text-lg my-3
+                    mt-10 w-full md:w-auto">Checkout</button>
                     </form>
                 </div>
 
-                <Link to="/MyModal"> 
-                <button  className="bg-gray-800 hover:bg-gray-900 rounded text-white p-4 text-lg my-3
-                    mt-10 w-full md:w-auto">Checkout</button></Link>
             </div>
             <div className="relative col-span-9 lg:col-span-4 xl:col-span-3 bg-gray-100 lg:h-auto xl:h-screen px-8 py-12 xl:px-6 xl:py-20">
                 <div className="flex flex-1">
@@ -111,9 +123,9 @@ const CheckOut = () => {
                     <div className="flex-auto">
                         
                     </div>
-                    <Link to='/ProductDetails'> 
+                    
                     <button className="text-gray-600 hover:text-gray-800 cursor-pointer text-base font-normal underline">Edit Cart</button>
-                    </Link>
+                    
                      </div>
                      {
                     item.map(index => {
